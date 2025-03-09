@@ -56,7 +56,7 @@ if SERVER then
     util.AddNetworkString("UpdateRandomanItems")
 
     -- Lame is pointless to have in the shop as it itself does nothing
-    local randoman_banned_randomats = CreateConVar("ttt_randoman_banned_randomats", "lame", FCVAR_NONE, "Events not allowed in the randoman's shop, separate ids with commas. You can find an ID by turning a randomat on/off in the randomat ULX menu and copying the word after 'ttt_randomat_', which appears in chat.")
+    local randoman_banned_randomats = CreateConVar("ttt_randoman_banned_randomats", "lame", FCVAR_NONE, "Events not allowed in the randoman's shop, separate ids with commas. You can find an ID by looking at an event in the randomat ULX menu.")
     local randoman_guaranteed_categories = CreateConVar("ttt_randoman_guaranteed_categories", "biased_innocent,fun,moderateimpact", FCVAR_NONE, "At least one randomat from each of these categories will always be in the randoman's shop. You can find a randomat's category by looking at an event in the randomat ULX menu.")
     local randoman_guaranteed_randomats = CreateConVar("ttt_randoman_guaranteed_randomats", "", FCVAR_NONE, "Events that will always appear in the randoma's shop, separate ids with commas.")
     local randoman_guarantee_pockets_event = CreateConVar("ttt_randoman_guarantee_pockets_event", 1, FCVAR_NONE, "Whether the \"What did I find in my pocket?\" event should always be available in the randoman's shop while the beggar role is enabled", 0, 1)

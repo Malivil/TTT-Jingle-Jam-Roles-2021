@@ -62,7 +62,7 @@ ttt_randoman_spawn_weight               1      // The weight assigned to spawnin
 ttt_randoman_min_players                0      // The minimum number of players required to spawn the randoman
 ttt_randoman_starting_health            100    // The amount of health a randoman starts with
 ttt_randoman_max_health                 100    // The maximum amount of health a randoman can have
-ttt_randoman_banned_randomats           "lame" // Events not allowed in the randoman's shop, separate ids with commas. You can find an ID by turning a randomat on/off in the randomat ULX menu and copying the word after 'ttt_randomat_', which appears in chat.
+ttt_randoman_banned_randomats           "lame" // Events not allowed in the randoman's shop, separate ids with commas. You can find an ID by looking at an event in the randomat ULX menu.
 ttt_randoman_prevent_auto_randomat      1      // Prevent auto-randomat triggering if there is a randoman at the start of the round.
 ttt_randoman_guaranteed_categories      "biased_innocent,fun,moderateimpact" // A randomat from these categories is guaranteed be in the randoman's shop, separate categories with commas. Categories: biased_innocent, biased_traitor, biased_zombie, biased, deathtrigger, entityspawn, eventtrigger, fun, gamemode, item, largeimpact, moderateimpact, rolechange, smallimpact, spectator, stats
 ttt_randoman_guaranteed_randomats       ""     // These events are guaranteed be in the randoman's shop, separate event IDs with commas.
