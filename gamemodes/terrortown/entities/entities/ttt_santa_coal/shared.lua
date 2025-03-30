@@ -31,6 +31,8 @@ if SERVER then
 
         self.antiSpam = CurTime() + 0.5
 
+        if owner:IsSanta() and owner.IsRoleAbilityDisabled and owner:IsRoleAbilityDisabled() then return end
+
         ent:TakeDamage(ent:Health(), owner, self)
         self.lifetime = CurTime() + 3 -- Leave the coal around for a few more seconds then remove it
         if ent:IsTraitorTeam() or (ent:IsJesterTeam() and GetConVar("ttt_santa_jesters_are_naughty"):GetBool()) or (ent:IsIndependentTeam() and GetConVar("ttt_santa_independents_are_naughty"):GetBool()) then

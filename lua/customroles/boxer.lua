@@ -21,31 +21,32 @@ ROLE.loadout = {"weapon_box_gloves"}
 ROLE.startinghealth = 125
 ROLE.maxhealth = 125
 
-ROLE.convars = {}
-table.insert(ROLE.convars, {
-    cvar = "ttt_boxer_speed_bonus",
-    type = ROLE_CONVAR_TYPE_NUM,
-    decimal = 2
-})
-table.insert(ROLE.convars, {
-    cvar = "ttt_boxer_drop_chance",
-    type = ROLE_CONVAR_TYPE_NUM,
-    decimal = 2
-})
-table.insert(ROLE.convars, {
-    cvar = "ttt_boxer_knockout_chance",
-    type = ROLE_CONVAR_TYPE_NUM,
-    decimal = 2
-})
-table.insert(ROLE.convars, {
-    cvar = "ttt_boxer_knockout_duration",
-    type = ROLE_CONVAR_TYPE_NUM,
-    decimal = 0
-})
-table.insert(ROLE.convars, {
-    cvar = "ttt_boxer_hide_when_active",
-    type = ROLE_CONVAR_TYPE_BOOL
-})
+ROLE.convars = {
+    {
+        cvar = "ttt_boxer_speed_bonus",
+        type = ROLE_CONVAR_TYPE_NUM,
+        decimal = 2
+    },
+    {
+        cvar = "ttt_boxer_drop_chance",
+        type = ROLE_CONVAR_TYPE_NUM,
+        decimal = 2
+    },
+    {
+        cvar = "ttt_boxer_knockout_chance",
+        type = ROLE_CONVAR_TYPE_NUM,
+        decimal = 2
+    },
+    {
+        cvar = "ttt_boxer_knockout_duration",
+        type = ROLE_CONVAR_TYPE_NUM,
+        decimal = 0
+    },
+    {
+        cvar = "ttt_boxer_hide_when_active",
+        type = ROLE_CONVAR_TYPE_BOOL
+    }
+}
 
 ROLE.translations = {
     ["english"] = {
@@ -291,7 +292,7 @@ if SERVER then
         if win_type == WIN_NONE or win_type == WIN_BOXER then return win_type end
 
         local boxer = player.GetLivingRole(ROLE_BOXER)
-        if not IsPlayer(boxer) then return win_type end
+        if not IsPlayer(boxer) or (boxer.IsRoleAbilityDisabled and boxer:IsRoleAbilityDisabled()) then return win_type end
 
         if not boxer:GetNWBool("BoxerWinPrevented", false) then
             boxer:SetNWBool("BoxerWinPrevented", true)

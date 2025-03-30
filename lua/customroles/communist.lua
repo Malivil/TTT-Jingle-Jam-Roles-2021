@@ -23,26 +23,27 @@ ROLE.shortdesc = "Spreads communism via their Communist Manifesto. Wins by conve
 ROLE.team = ROLE_TEAM_INDEPENDENT
 ROLE.loadout = {"weapon_com_manifesto"}
 
-ROLE.convars = {}
-table.insert(ROLE.convars, {
-    cvar = "ttt_communist_convert_time",
-    type = ROLE_CONVAR_TYPE_NUM,
-    decimal = 0
-})
-table.insert(ROLE.convars, {
-    cvar = "ttt_communist_convert_credits",
-    type = ROLE_CONVAR_TYPE_NUM,
-    decimal = 0
-})
-table.insert(ROLE.convars, {
-    cvar = "ttt_communist_convert_freeze",
-    type = ROLE_CONVAR_TYPE_BOOL
-})
-table.insert(ROLE.convars, {
-    cvar = "ttt_communist_convert_unfreeze_delay",
-    type = ROLE_CONVAR_TYPE_NUM,
-    decimal = 2
-})
+ROLE.convars = {
+    {
+        cvar = "ttt_communist_convert_time",
+        type = ROLE_CONVAR_TYPE_NUM,
+        decimal = 0
+    },
+    {
+        cvar = "ttt_communist_convert_credits",
+        type = ROLE_CONVAR_TYPE_NUM,
+        decimal = 0
+    },
+    {
+        cvar = "ttt_communist_convert_freeze",
+        type = ROLE_CONVAR_TYPE_BOOL
+    },
+    {
+        cvar = "ttt_communist_convert_unfreeze_delay",
+        type = ROLE_CONVAR_TYPE_NUM,
+        decimal = 2
+    }
+}
 
 ROLE.translations = {
     ["english"] = {
