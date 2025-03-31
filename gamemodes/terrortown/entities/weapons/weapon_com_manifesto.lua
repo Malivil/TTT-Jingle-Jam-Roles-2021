@@ -129,6 +129,10 @@ end
 function SWEP:PrimaryAttack()
     if CLIENT then return end
 
+    local owner = self:GetOwner()
+    if not IsValid(owner) then return end
+    if owner.IsRoleAbilityDisabled and owner:IsRoleAbilityDisabled() then return end
+
     local tr = self:GetTraceEntity()
     if IsValid(tr.Entity) then
         local ent = tr.Entity
@@ -278,13 +282,14 @@ function SWEP:Think()
     if CLIENT then return end
 
     if self:GetState() > STATE_NONE then
-        if not IsValid(self:GetOwner()) then
+        local owner = self:GetOwner()
+        if not IsValid(owner) or (owner:IsCommunist() and owner.IsRoleAbilityDisabled and owner:IsRoleAbilityDisabled()) then
             self:FireError()
             return
         end
 
         local tr = self:GetTraceEntity()
-        if not self:GetOwner():KeyDown(IN_ATTACK) or tr.Entity ~= self.TargetEntity then
+        if not owner:KeyDown(IN_ATTACK) or tr.Entity ~= self.TargetEntity then
             self:Error("CONVERSION ABORTED")
             return
         end

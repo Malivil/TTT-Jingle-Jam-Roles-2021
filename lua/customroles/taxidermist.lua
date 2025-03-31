@@ -16,12 +16,13 @@ ROLE.shortdesc = "Has a Taxidermy Kit which can be sed to make player corpses im
 ROLE.team = ROLE_TEAM_TRAITOR
 ROLE.loadout = {"weapon_tax_kit"}
 
-ROLE.convars = {}
-table.insert(ROLE.convars, {
-    cvar = "ttt_taxidermist_device_time",
-    type = ROLE_CONVAR_TYPE_NUM,
-    decimal = 0
-})
+ROLE.convars = {
+    {
+        cvar = "ttt_taxidermist_device_time",
+        type = ROLE_CONVAR_TYPE_NUM,
+        decimal = 0
+    }
+}
 
 ROLE.translations = {
     ["english"] = {

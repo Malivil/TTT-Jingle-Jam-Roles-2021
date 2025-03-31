@@ -73,7 +73,11 @@ if SERVER then
                 local item_id = self.item_id
 
                 local equip_id = tonumber(item_id)
-                if equip_id then
+                local success = true
+                -- If the santa who shot out this present is disabled, don't give them anything even though they've been recorded as receiving a gift
+                if owner:IsSanta() and owner.IsRoleAbilityDisabled and owner:IsRoleAbilityDisabled() then
+                    success = false
+                elseif equip_id then
                     local has = activator:HasEquipmentItem(equip_id)
                     NotifyPlayer(activator, equip_id, has, true)
                     if has then
@@ -96,15 +100,17 @@ if SERVER then
                     end
                 end
 
-                if not GetGlobalBool("ttt_santa_random_presents", false) then
-                    owner:SetNWString("SantaLoadedItem", "")
-                    owner:SetCredits(1)
+                if success then
+                    if not GetGlobalBool("ttt_santa_random_presents", false) then
+                        owner:SetNWString("SantaLoadedItem", "")
+                        owner:SetCredits(1)
+                    end
+
+                    owner:PrintMessage(HUD_PRINTTALK, activator:Nick() .. " has opened your present and your ammo has been refunded.")
+                    owner:SetNWBool("SantaHasAmmo", true)
                 end
 
                 hook.Call("TTTSantaPresentOpened", nil, owner, activator, item_id)
-
-                owner:PrintMessage(HUD_PRINTTALK, activator:Nick() .. " has opened your present and your ammo has been refunded.")
-                owner:SetNWBool("SantaHasAmmo", true)
                 self:Remove()
             end
         end

@@ -159,6 +159,7 @@ function SWEP:PrimaryAttack()
         if SERVER then
             if not IsPlayer(target) then return end
             if target:GetNWBool("BoxerKnockedOut", false) then return end
+            if IsPlayer(owner) and owner:IsBoxer() and owner.IsRoleAbilityDisabled and owner:IsRoleAbilityDisabled() then return end
 
             -- Try knocking out the player first
             if math.random() < GetConVar("ttt_boxer_knockout_chance"):GetFloat() then
@@ -186,6 +187,7 @@ function SWEP:DoFlurryPunch(owner)
     self:DoPunch(owner, function(target)
         -- Knock out the target if they aren't already
         if target:GetNWBool("BoxerKnockedOut", false) then return end
+        if IsPlayer(owner) and owner:IsBoxer() and owner.IsRoleAbilityDisabled and owner:IsRoleAbilityDisabled() then return end
         target:BoxerKnockout()
     end)
 end
