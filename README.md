@@ -3,7 +3,7 @@ A pack of [Custom Roles for TTT](https://github.com/Custom-Roles-for-TTT/TTT-Cus
 
 # Roles
 
-## Boxer
+## ![Role Icon](/gamemodes/terrortown/content/materials/vgui/ttt/roles/box/tab_box.png) Boxer
 _Suggested By_: Fyxen\
 The Boxer is a jester role whose goal is to knock out all of the living players.
 \
@@ -28,7 +28,7 @@ ttt_boxer_knockout_chance   0.33 // The percent chance that a player targeted by
 ttt_boxer_knockout_duration 10   // The number of a seconds a player targeted by the boxer's secondary attack will be knocked out for
 ```
 
-## Communist
+## ![Role Icon](/gamemodes/terrortown/content/materials/vgui/ttt/roles/com/tab_com.png) Communist
 _Suggested By_: Horselover Fat\
 The Communist is an independent role whose goal is to convert all living players to communism using the Communist Manifesto.
 \
@@ -49,7 +49,7 @@ ttt_communist_can_see_jesters        0   // Whether jesters are revealed (via he
 ttt_communist_update_scoreboard      0   // Whether the communist shows dead players as missing in action
 ```
 
-## Randoman
+## ![Role Icon](/gamemodes/terrortown/content/materials/vgui/ttt/roles/ran/tab_ran.png) Randoman
 _Contributed By_: The Stig\
 The Randoman is a detective who is able to buy randomat events, rather than detective items.\
 _Requires [TTT Randomat 2.0 for Custom Roles for TTT](https://steamcommunity.com/sharedfiles/filedetails/?id=2055805086) to be installed._
@@ -79,7 +79,7 @@ ttt_randoman_can_see_jesters            1      // Whether jesters are revealed (
 ttt_randoman_update_scoreboard          1      // Whether the randoman shows dead players as missing in action (if ttt_randoman_is_independent is enabled)
 ```
 
-## Santa
+## ![Role Icon](/gamemodes/terrortown/content/materials/vgui/ttt/roles/san/tab_san.png) Santa
 _Suggested By_: [The Custom Roles for TTT Discord Server](https://discord.gg/BAPZrykC3F) \
 Santa is a detective who is able to give gifts to nice players and coal to naughty players.
 \
@@ -110,7 +110,7 @@ Called when a player opens a present from santa.\
 - *tgt* - The player who opened the present
 - *item_id* - The ID of the item/equipment in the present
 
-## Taxidermist
+## ![Role Icon](/gamemodes/terrortown/content/materials/vgui/ttt/roles/tax/tab_tax.png) Taxidermist
 _Suggested By_: Horselover Fat\
 The Taxidermist is a member of the traitor team whose goal is to use their taxidermy kit on a corpse to make it impossible to identify.
 \
