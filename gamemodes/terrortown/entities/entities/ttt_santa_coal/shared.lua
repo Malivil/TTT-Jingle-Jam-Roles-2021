@@ -31,7 +31,7 @@ if SERVER then
 
         self.antiSpam = CurTime() + 0.5
 
-        if owner:IsSanta() and owner.IsRoleAbilityDisabled and owner:IsRoleAbilityDisabled() then return end
+        if owner:IsSanta() and owner:IsRoleAbilityDisabled() then return end
 
         ent:TakeDamage(ent:Health(), owner, self)
         self.lifetime = CurTime() + 3 -- Leave the coal around for a few more seconds then remove it

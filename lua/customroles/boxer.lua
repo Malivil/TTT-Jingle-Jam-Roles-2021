@@ -292,7 +292,7 @@ if SERVER then
         if win_type == WIN_NONE or win_type == WIN_BOXER then return win_type end
 
         local boxer = player.GetLivingRole(ROLE_BOXER)
-        if not IsPlayer(boxer) or (boxer.IsRoleAbilityDisabled and boxer:IsRoleAbilityDisabled()) then return win_type end
+        if not IsPlayer(boxer) or boxer:IsRoleAbilityDisabled() then return win_type end
 
         if not boxer:GetNWBool("BoxerWinPrevented", false) then
             boxer:SetNWBool("BoxerWinPrevented", true)

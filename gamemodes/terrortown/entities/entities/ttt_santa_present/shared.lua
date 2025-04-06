@@ -75,7 +75,7 @@ if SERVER then
                 local equip_id = tonumber(item_id)
                 local success = true
                 -- If the santa who shot out this present is disabled, don't give them anything even though they've been recorded as receiving a gift
-                if owner:IsSanta() and owner.IsRoleAbilityDisabled and owner:IsRoleAbilityDisabled() then
+                if owner:IsSanta() and owner:IsRoleAbilityDisabled() then
                     success = false
                 elseif equip_id then
                     local has = activator:HasEquipmentItem(equip_id)

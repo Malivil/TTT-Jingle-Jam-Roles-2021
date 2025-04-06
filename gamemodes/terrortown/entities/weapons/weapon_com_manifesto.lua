@@ -131,7 +131,7 @@ function SWEP:PrimaryAttack()
 
     local owner = self:GetOwner()
     if not IsValid(owner) then return end
-    if owner.IsRoleAbilityDisabled and owner:IsRoleAbilityDisabled() then return end
+    if owner:IsRoleAbilityDisabled() then return end
 
     local tr = self:GetTraceEntity()
     if IsValid(tr.Entity) then
@@ -283,7 +283,7 @@ function SWEP:Think()
 
     if self:GetState() > STATE_NONE then
         local owner = self:GetOwner()
-        if not IsValid(owner) or (owner:IsCommunist() and owner.IsRoleAbilityDisabled and owner:IsRoleAbilityDisabled()) then
+        if not IsValid(owner) or (owner:IsCommunist() and owner:IsRoleAbilityDisabled()) then
             self:FireError()
             return
         end

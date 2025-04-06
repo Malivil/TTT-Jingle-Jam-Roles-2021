@@ -53,7 +53,7 @@ function SWEP:PrimaryAttack()
 
     local owner = self:GetOwner()
     if not IsValid(owner) then return end
-    if owner.IsRoleAbilityDisabled and owner:IsRoleAbilityDisabled() then return end
+    if owner:IsRoleAbilityDisabled() then return end
 
     local item_id = owner:GetNWString("SantaLoadedItem")
     local random_presents = GetConVar("ttt_santa_random_presents"):GetBool()
@@ -118,7 +118,7 @@ function SWEP:SecondaryAttack()
 
     local owner = self:GetOwner()
     if not IsValid(owner) then return end
-    if owner.IsRoleAbilityDisabled and owner:IsRoleAbilityDisabled() then return end
+    if owner:IsRoleAbilityDisabled() then return end
 
     local random_presents = GetConVar("ttt_santa_random_presents"):GetBool()
     local has_ammo = owner:GetNWBool("SantaHasAmmo", false)
