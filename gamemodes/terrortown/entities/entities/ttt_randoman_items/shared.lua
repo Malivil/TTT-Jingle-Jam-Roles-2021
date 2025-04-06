@@ -80,7 +80,7 @@ if SERVER then
                     return false
                 end
             end
-        elseif ply.IsRoleAbilityDisabled and ply:IsRoleAbilityDisabled() then
+        elseif ply:IsRoleAbilityDisabled() then
             ply:SubtractCredits(1)
             return false
         end
@@ -89,7 +89,7 @@ if SERVER then
     local triggeredEvents = {}
     -- Trigger a randomat event when a randoman item is bought
     hook.Add("TTTOrderedEquipment", "RandomanItemBought", function(ply, id, is_item)
-        if ply.IsRoleAbilityDisabled and ply:IsRoleAbilityDisabled() then return end
+        if ply:IsRoleAbilityDisabled() then return end
 
         if is_item and IsRandomanItem(id) then
             local item = GetEquipmentItemById(id)
